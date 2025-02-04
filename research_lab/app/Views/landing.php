@@ -13,21 +13,8 @@
     
 </head>
 <body>
-    <!-- 연구실 네비게이션 바 -->
-    <header id="navbar">
-        <div class="logo">
-            <a href="/">
-                <img src="/images/logo-small.png" alt="M4ML Logo" class="logo-img"> 
-            </a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="/projects">Projects</a></li>
-                <li><a href="/publication">Publications</a></li>
-                <li><a href="/members">Members</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Header -->
+    <?php include 'header.php'; ?>
 
     <!-- 랜딩 페이지 내용 -->
     <section id="landing">
@@ -61,6 +48,7 @@
                 <h3>교수 연구실</h3>
                 <hr>
                 <p>부산광역시 OO구 OO동 OOO-OO</p>
+                <br>
                 <h3>학생 연구실</h3>
                 <hr>
                 <p>부산광역시 OO구 OO동 OOO-XX</p>
@@ -69,9 +57,7 @@
     </section>
 
     <!-- Footer -->
-    <footer id="footer">
-        <p>&copy; 2025 M4ML. All rights reserved.</p>
-    </footer>
+    <?php include 'footer.php'; ?>
 
     <script src="/js/map.js"></script>
 </body>
