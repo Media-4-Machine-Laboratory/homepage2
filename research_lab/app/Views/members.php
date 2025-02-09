@@ -34,7 +34,7 @@
                                 <img src="<?= $member['profile_image'] ?>" alt="<?= $member['name'] ?>">
                                 <h4><?= $member['name'] ?></h4>
                                 <p><?= $member['email'] ?></p>
-                                <a href="/members/<?= $member['name'] ?>">View Profile</a>
+                                <a href="/members/<?= $member['en_name'] ?>">View Profile</a>
                             </div>
                         <?php endforeach; ?>
                     </div>

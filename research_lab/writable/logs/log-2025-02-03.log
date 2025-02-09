@@ -1,0 +1,21 @@
+CRITICAL - 2025-02-03 04:53:42 --> Error: Class "App\Controllers\MemberModel" not found
+[Method: GET, Route: members]
+in APPPATH/Controllers/MembersController.php on line 9.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\MembersController->index()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MembersController))
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Users/jeonsang-gyun/Documents/00 M4ML/11 연구실 홈페이지/homepage/research_lab/public/index.php')
+CRITICAL - 2025-02-03 05:09:14 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "서정일"
+[Method: GET, Route: members/%EC%84%9C%EC%A0%95%EC%9D%BC]
+in SYSTEMPATH/Router/Router.php on line 739.
+ 1 SYSTEMPATH/Router/Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('members/서정일')
+ 2 SYSTEMPATH/CodeIgniter.php(832): CodeIgniter\Router\Router->handle('members/서정일')
+ 3 SYSTEMPATH/CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Users/jeonsang-gyun/Documents/00 M4ML/11 연구실 홈페이지/homepage/research_lab/public/index.php')
