@@ -17,4 +17,12 @@ class MembersController extends BaseController
     public function jeongilseo() {
         return view('member_jeongilseo');
     }
+
+    public function member_details($name) {
+        $model = new MemberModel();
+
+        $member = $model->where('en_name', $name)->first();
+
+        return view('member_details', ['member' => $member]);
+    }
 }

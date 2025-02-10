@@ -178,16 +178,23 @@
 
     <!-- Location -->
     <section id="location">
-        <div class="location-container">
-            <div id="map" ></div>
-            <div class="location-info">
-                <h3>교수 연구실</h3>
-                <hr>
-                <p>부산광역시 사하구 낙동대로 550번길 공과대학5호관 630호 (S06-630)</p>
-                <br>
-                <h3>학생 연구실</h3>
-                <hr>
-                <p>부산광역시 사하구 낙동대로 550번길 공과대학1호관 424호 (S03-424)</p>
+        <div class="row">
+            <div class="col col-md-6 location-container">
+                <div id="map"></div>
+            </div>
+            <div class="col col-md-6">
+                <div class="location-info">
+                    <div class="location-info-professor">
+                        <h3>교수 연구실</h3>
+                        <hr style="width: 75%;">
+                        <p>부산광역시 사하구 낙동대로 550번길 공과대학5호관 630호 (S06-630)</p>
+                    </div>
+                    <div class="location-info-student">
+                        <h3>학생 연구실</h3>
+                        <hr style="width: 75%;">
+                        <p>부산광역시 사하구 낙동대로 550번길 공과대학1호관 424호 (S03-424)</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

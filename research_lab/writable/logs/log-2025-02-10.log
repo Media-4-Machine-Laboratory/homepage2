@@ -1,0 +1,15 @@
+CRITICAL - 2025-02-10 10:52:53 --> ErrorException: Undefined array key 0
+[Method: GET, Route: members/sangkyunjeon]
+in APPPATH/Views/member_details.php on line 23.
+ 1 APPPATH/Views/member_details.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', '/Users/jeonsang-gyun/Documents/00 M4ML/11 연구실 홈페이지/homepage/research_lab/app/Views/member_details.php', 23)
+ 2 SYSTEMPATH/View/View.php(224): include('/Users/jeonsang-gyun/Documents/00 M4ML/11 연구실 홈페이지/homepage/research_lab/app/Views/member_details.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('member_details', [], true)
+ 5 APPPATH/Controllers/MembersController.php(26): view('member_details', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\MembersController->member_details('sangkyunjeon')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MembersController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/jeonsang-gyun/Documents/00 M4ML/11 연구실 홈페이지/homepage/research_lab/public/index.php')
