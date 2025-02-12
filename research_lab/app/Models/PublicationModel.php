@@ -13,7 +13,7 @@ class PublicationModel extends Model
 
     // 논문 데이터 가져오기 (Conference 또는 Journal 필터링 가능)
     public function getPublications($category = null)
-    {
+    {   
         if ($category) {
             return $this->where('category', $category)->findAll();
         }
