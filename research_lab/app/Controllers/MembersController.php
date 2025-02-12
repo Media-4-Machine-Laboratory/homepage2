@@ -22,7 +22,35 @@ class MembersController extends BaseController
         $model = new MemberModel();
 
         $member = $model->where('en_name', $name)->first();
+        $rawlinks = explode(',', $member['links']);
+        $rawlinks = array_map('trim', $rawlinks);
 
-        return view('member_details', ['member' => $member]);
+        $links = [];
+        foreach ($rawlinks as $link) {
+            $parts = explode(':', $link, 2);
+            if (count($parts) == 2) {
+                $key = trim($parts[0]);
+                $value = trim($parts[1]);
+
+                if (!empty($value)) {
+                    switch ($key) {
+                        case 'github':
+                            $links[$key] = "https://github.com/$value";
+                            break;
+                        case 'linkedin':
+                            $links[$key] = "https://linkedin.com/$value";
+                            break;
+                        default:
+                            $links[$key] = $value;
+                            break;
+                    }
+                }
+            }
+        }
+
+        return view('member_details', [
+            'member' => $member,
+            'links' => $links
+        ]);
     }
 }
