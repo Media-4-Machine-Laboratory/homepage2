@@ -11,6 +11,12 @@ class MembersController extends BaseController
     {
         $model = new MemberModel();
         $data['members'] = $model->findAll(); // 데이터베이스에서 모든 구성원 가져오기
+
+        for ($i = 0; $i < count($data['members']);) {
+            $data['members'][$i]['image_url'] = $this->get_member_image($data['members'][$i]['en_name']);
+            $i++;
+        }
+
         return view('members', $data);
     }
 
@@ -22,6 +28,8 @@ class MembersController extends BaseController
         $model = new MemberModel();
 
         $member = $model->where('en_name', $name)->first();
+        $member['image_url'] = $this->get_member_image($member['en_name']);
+        
         $rawlinks = explode(',', $member['links']);
         $rawlinks = array_map('trim', $rawlinks);
 
@@ -52,5 +60,19 @@ class MembersController extends BaseController
             'member' => $member,
             'links' => $links
         ]);
+    }
+
+    public function get_member_image($en_name) {
+        $webp = FCPATH . 'images/profile_image/' . $en_name . '.webp';
+        $png = FCPATH . 'images/profile_image/' . $en_name . '.png';
+
+        $image_url = "";
+        if (file_exists($webp)) {
+            $image_url = base_url('images/profile_image/' . $en_name . '.webp');
+        } else if (file_exists($png)) {
+            $image_url = base_url('images/profile_image/' . $en_name . '.png');
+        }
+
+        return $image_url;
     }
 }

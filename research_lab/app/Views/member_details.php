@@ -8,14 +8,8 @@
     <link rel="stylesheet" href="/css/member_details.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- MDB -->
-    <link
-    href="https://cdn.jsdelivr.net/npm/mdb-ui-kit@8.2.0/css/mdb.min.css"
-    rel="stylesheet"
-    />
-    <link
-    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-    rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/mdb-ui-kit@8.2.0/css/mdb.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
 
     <script src="/js/landing_script.js"></script>
     
@@ -32,7 +26,10 @@
                     <div class="profile-box card">
                         <div class="card-body">
                             <div class="profile-box-img">
-                                <img src="<?= $member['profile_image'] ?>" />
+                                <picture>
+                                    <source type="image/webp" srcset="<?= $member['image_url'] ?>?width=100 100w">
+                                    <img class="rounded-circle" src="<?= $member['image_url'] ?>" alt="<?= $member['name'] ?>" loading="lazy">
+                                </picture>
                             </div>
                             <div class="profile-box-name">
                                 <h3>
@@ -66,7 +63,12 @@
             </div>
             <div class="col col-md-8">
                 <div class="cv-contents">
-                    <object data="http://localhost:8080/pdf/view/cv/sangkyunjeon.pdf" type="application/pdf"></object>
+                    <?php if(file_exists(FCPATH . 'cv/' . $member['en_name'] . '.pdf')): ?>
+                        <object data="http://localhost:8080/pdf/view/cv/<?= $member['en_name'] ?>.pdf" type="application/pdf"></object>
+                    <?php elseif ($member['en_name'] == 'seongjunpark'): ?>
+                        <object data="https://parkseongjun.com"></object>
+                    <?php endif; ?>
+
                 </div>
             </div>
         </div>
@@ -74,6 +76,9 @@
 
     <!-- Footer -->
     <?php include 'footer.php'; ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mdb-ui-kit@8.2.0/js/mdb.umd.min.js"></script>
+
     <script>
         function copyEmail(email) {
             navigator.clipboard.writeText(email).then(() => {})

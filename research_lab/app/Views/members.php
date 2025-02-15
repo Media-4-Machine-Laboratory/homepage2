@@ -6,9 +6,10 @@
     <title>M4ML</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="/css/members_style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
-    <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dcf2430e47f4d6e4c7eae6a01045a618"></script> -->
+
+    <link href="https://cdn.jsdelivr.net/npm/mdb-ui-kit@8.2.0/css/mdb.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+
     <script src="/js/landing_script.js"></script>
     
 </head>
@@ -31,7 +32,10 @@
                     <div class="member-list">
                         <?php foreach ($filtered as $member): ?>
                             <div class="member-card">
-                                <img src="<?= $member['profile_image'] ?>" alt="<?= $member['name'] ?>">
+                                <picture>
+                                    <source type="image/webp" srcset="<?= $member['image_url'] ?>?width=100 100w">
+                                    <img class="rounded-circle" src="<?= $member['image_url'] ?>" alt="<?= $member['name'] ?>" loading="lazy">
+                                </picture>
                                 <h4><?= $member['name'] ?></h4>
                                 <p><?= $member['email'] ?></p>
                                 <a href="/members/<?= $member['en_name'] ?>">View Profile</a>
@@ -46,5 +50,8 @@
 
     <!-- Footer -->
     <?php include 'footer.php'; ?>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mdb-ui-kit@8.2.0/js/mdb.umd.min.js"></script>
 </body>
 </html>
