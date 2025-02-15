@@ -8,6 +8,7 @@
 
 writable/*
 writable
+research_lab/writable
 *.log
 
 user_guide_src/build/*
