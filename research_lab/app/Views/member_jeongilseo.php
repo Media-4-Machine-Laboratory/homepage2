@@ -6,11 +6,6 @@
     <title>M4ML</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="/css/member_jeongilseo.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
-    <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dcf2430e47f4d6e4c7eae6a01045a618"></script> -->
-    <script src="/js/landing_script.js"></script>
-    
 </head>
 <body>
     <!-- Header -->
@@ -78,5 +73,8 @@
 
     <!-- Footer -->
     <?php include 'footer.php'; ?>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/landing_script.js"></script>
 </body>
 </html>
