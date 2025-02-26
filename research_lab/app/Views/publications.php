@@ -63,7 +63,11 @@
                         <?php foreach($journal as $value): ?>
                             <div class="col">
                                 <div class="card h-100">
-                                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top" />
+                                    <?php if (!empty($value['paper'])): ?>
+                                        <img src="<?= $value['paper'] ?>" class="card-img-top" />
+                                    <?php else: ?>
+                                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top">
+                                    <?php endif; ?>
                                     <div class="card-body">
                                         <h5 class="card-title">
                                             <?= $value['title'] ?>
@@ -135,7 +139,11 @@
                                                         </h2>
                                                         <div id="collapsePaper-<?= $value['id'] ?>" class="accordion-collapse collapse" aria-labelledby="headingPaper-<?= $value['id'] ?>" data-mdb-parent="#accordion-<?= $value['id'] ?>">
                                                             <div class="accordion-body">
-                                                                PAPER
+                                                                <?php if (!empty($value['paper'])): ?>
+                                                                    <img src="<?= $value['paper'] ?>" class="card-img-top" />
+                                                                <?php else: ?>
+                                                                    No Image Available
+                                                                <?php endif; ?>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -153,7 +161,11 @@
                                                         </h2>
                                                         <div id="collapsePoster-<?= $value['id'] ?>" class="accordion-collapse collapse" aria-labelledby="headingPoster-<?= $value['id'] ?>" data-mdb-parent="#accordion-<?= $value['id'] ?>">
                                                             <div class="accordion-body">
-                                                                POSTER
+                                                                <?php if (!empty($value['poster'])): ?>
+                                                                    <img src="<?= $value['poster'] ?>" class="card-img-top" />
+                                                                <?php else: ?>
+                                                                    No Image Available
+                                                                <?php endif; ?>
                                                             </div>
                                                         </div>
                                                     </div>

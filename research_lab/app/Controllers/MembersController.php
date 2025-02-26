@@ -46,7 +46,7 @@ class MembersController extends BaseController
                             $links[$key] = "https://github.com/$value";
                             break;
                         case 'linkedin':
-                            $links[$key] = "https://linkedin.com/$value";
+                            $links[$key] = "https://linkedin.com/in/$value";
                             break;
                         default:
                             $links[$key] = $value;

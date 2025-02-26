@@ -13,11 +13,29 @@ class Publications extends BaseController
         $journal = $model->where("category", "Journal")->findAll();
         $patent = $model->where("category", "Patent")->findAll();
 
+        $conference = $this->addImagePath($conference, 'paper');
+        $conference = $this->addImagePath($conference, 'poster');
+        $journal = $this->addImagePath($journal, 'paper');
+
         return view('publications',
-    [
-        'conference' => $conference,
-        'journal' => $journal,
-        'patent' => $patent
-    ]);
+        [
+            'conference' => $conference,
+            'journal' => $journal,
+            'patent' => $patent
+        ]);
+    }
+
+    public function addImagePath($publications, $root_dir) {
+        foreach($publications as &$publication) {
+            $imagePath = 'images/publication/' . $root_dir . '/' . $publication['title'] . '.png';
+
+            if (file_exists($imagePath)) {
+                $publication[$root_dir] = $imagePath;
+            } else {
+                $publication[$root_dir] = null;
+            }
+        }
+
+        return $publications;
     }
 }
